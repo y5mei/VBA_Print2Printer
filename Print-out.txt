@@ -1,0 +1,20 @@
+' Use QA lab's printer to print CMM result
+' Created by Chris Mei April 08, 2017
+' By using this Word VBA Macro function, people can printout
+' through a user defined printer while keep the default printer unchanged
+' 
+
+Sub Print2Printer()
+    Dim current_printer As String
+    current_printer = ActivePrinter
+    Application.ActivePrinter = "\\pd-co-vps1\Eston_QA_5052CI"
+    ActiveDocument.PrintOut Copies:=1
+    Application.ActivePrinter = current_printer
+End Sub
+
+Sub ShowPrinter()
+    Dim current_printer As String
+    current_printer = ActivePrinter
+    MsgBox (current_printer)
+End Sub
+
